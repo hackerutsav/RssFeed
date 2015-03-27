@@ -17,7 +17,8 @@ public class DetailFragment extends Fragment {
         return view;
     }
     public void setText(String item) {
-        TextView view  = (TextView) getView().findViewById
+        TextView view  = (TextView) getView().findViewById(R.id.detailsText);
+        view.setText(item);
     }
 }
 
