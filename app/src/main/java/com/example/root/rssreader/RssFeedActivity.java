@@ -1,17 +1,18 @@
 package com.example.root.rssreader;
 
+import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class RssFeedActivity extends ActionBarActivity {
+public class RssFeedActivity extends Activity implements MyListFragment.OnItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rss_feed);
+        setContentView(R.layout.activity_rssfeed);
     }
 
 
@@ -20,6 +21,15 @@ public class RssFeedActivity extends ActionBarActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_rss_feed, menu);
         return true;
+
+    }
+
+    @Override
+    public void onRSSItemSelected (String link){
+        DetailFragment fragment  = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
+        if (fragment != null && fragment.isInLayout()) {
+            fragment.setText(link);
+        }
     }
 
     @Override
