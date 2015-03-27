@@ -25,7 +25,11 @@ public class RssFeedActivity extends Activity implements MyListFragment.OnItemSe
     }
 
     @Override
+<<<<<<< HEAD
     public void onRSSItemSelected (String link){
+=======
+    public void OnRssItemSelected (String link){
+>>>>>>> 846ddd43c6e6731359d2f54c7d28ebf5a3dcc7ff
         DetailFragment fragment  = (DetailFragment) getFragmentManager().findFragmentById(R.id.detailFragment);
         if (fragment != null && fragment.isInLayout()) {
             fragment.setText(link);
